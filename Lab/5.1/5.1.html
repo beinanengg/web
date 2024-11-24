@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Newspaper</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: #282c34;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      nav {
+        background-color: #4caf50;
+        padding: 10px;
+        text-align: center;
+      }
+
+      nav a {
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+        font-size: 18px;
+      }
+
+      section {
+        background-color: #f9f9f9;
+        padding: 20px;
+        margin: 20px 0;
+      }
+
+      article {
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 15px;
+        margin: 15px 0;
+      }
+
+      aside {
+        background-color: #f4f4f4;
+        padding: 15px;
+        border-left: 5px solid #ff9800;
+      }
+
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        position: relative;
+      }
+
+      figure {
+        margin: 20px 0;
+        text-align: center;
+      }
+
+      figure img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      figure figcaption {
+        margin-top: 10px;
+        font-size: 14px;
+        color: #555;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 16px;
+      }
+
+      table th,
+      table td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+      }
+
+      table th {
+        background-color: #007bff;
+        color: white;
+      }
+
+      table tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to the Semantic Newspaper</h1>
+      <p>Your daily dose of news in a structured format</p>
+    </header>
+    <nav>
+      <a href="#news">News</a>
+      <a href="#features">Features</a>
+      <a href="#about">About Us</a>
+    </nav>
+    <section id="news">
+      <h2>Latest News</h2>
+      <article>
+        <h3>Breaking News: HTML5 is Awesome!</h3>
+        <p>
+          HTML5 introduces semantic elements that improve the structure and
+          accessibility of web pages.
+        </p>
+      </article>
+      <article>
+        <h3>Sports Update</h3>
+        <p>The local team secured a thrilling victory in yesterday's match.</p>
+      </article>
+    </section>
+    <aside>
+      <h2>Did You Know?</h2>
+      <p>HTML was first created by Tim Berners-Lee in 1991.</p>
+    </aside>
+    <section id="features">
+      <h2>Special Features</h2>
+      <figure>
+        <img src="https://via.placeholder.com/600x300" alt="Sample Image" />
+        <figcaption>An inspiring view of the future of the web</figcaption>
+      </figure>
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Semantic Elements</td>
+            <td>Provide meaningful structure to HTML pages.</td>
+          </tr>
+          <tr>
+            <td>Responsive Design</td>
+            <td>Adapts to various screen sizes seamlessly.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <footer>
+      <p>&copy; 2024 Semantic Newspaper. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" href="6.css" />
+  </head>
+  <body>
+    <div class="calculator">
+      <h1>Simple Calculator</h1>
+      <div class="input-container">
+        <input type="number" id="num1" placeholder="Enter number" />
+        <input type="number" id="num2" placeholder="Enter number" />
+      </div>
+      <div class="button-container">
+        <button onclick="calculate('+')">+</button>
+        <button onclick="calculate('-')">-</button>
+        <button onclick="calculate('*')">x</button>
+        <button onclick="calculate('/')">%</button>
+        <button onclick="calculate('^')">^</button>
+        <button onclick="calculate('sqrt')">√</button>
+        <button onclick="calculate('square')">x²</button>
+      </div>
+      <p id="result">Result: <span id="output">0</span></p>
+    </div>
+    <script src="6.js"></script>
+  </body>
+</html>
