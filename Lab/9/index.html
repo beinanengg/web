@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jQuery Script</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: lightblue;
+        margin: 20px auto;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>jQuery Demo</h1>
+    <p id="paragraph">This is a sample paragraph.</p>
+    <ul id="list">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+
+    <button id="appendContent">Append Content</button>
+    <button id="animateBox">Animate Box</button>
+    <button id="changeColor">Change Color</button>
+
+    <div class="box"></div>
+
+    <script>
+      $(document).ready(function () {
+        // a. Append content to the paragraph and list
+        $("#appendContent").click(function () {
+          $("#paragraph").append(" Appended text!");
+          $("#list").append("<li>Appended Item</li>");
+        });
+
+        // b. Animate the box and change its position
+        $("#animateBox").click(function () {
+          $(".box").animate(
+            { left: "+=100px", height: "150px", width: "150px" },
+            1000
+          );
+        });
+
+        // c. Change the color of the animated div
+        $("#changeColor").click(function () {
+          $(".box").css("background-color", "blue", "red");
+        });
+      });
+    </script>
+  </body>
+</html>
