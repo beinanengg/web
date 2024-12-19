@@ -90,3 +90,20 @@
     ?>
 </body>
 </html>
+
+
+CREATE TABLE students (
+    id INT AUTO_INCREMENT PRIMARY KEY,  
+    name VARCHAR(100),
+    marks INT,
+    age INT,
+    grade VARCHAR(2)
+);
+
+
+INSERT INTO students (name, marks, age, grade)
+     VALUES
+     ('John Doe', 85, 16, 'A'),
+     ('Jane Smith', 90, 17, 'A+'),
+     ('Michael Johnson', 78, 15, 'B'),
+     ('Emily Davis', 92, 16, 'A+');
