@@ -1,20 +1,13 @@
-# File: index.php
 <?php
-session_start();
+$file = "new.txt";
 
-$count_file = 'visitor_count.txt';
-
-if (!file_exists($count_file)) {
-    file_put_contents($count_file, '0');
+if (!file_exists($file)) {
+    file_put_contents($file, 0);
 }
 
-$visitor_count = intval(file_get_contents($count_file));
+$count = (int)file_get_contents($file) + 1;
 
-if (!isset($_SESSION['visited'])) {
-    $visitor_count++;
-    file_put_contents($count_file, $visitor_count);
-    $_SESSION['visited'] = true;
-}
+file_put_contents($file, $count);
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +44,7 @@ if (!isset($_SESSION['visited'])) {
     <div class="counter-container">
         <h1>Website Visitor Counter</h1>
         <p>Total Visitors:</p>
-        <div class="visitor-count"><?php echo $visitor_count; ?></div>
+        <div class="visitor-count"><?php echo $count; ?></div>
         <p>Thank you for visiting!</p>
     </div>
 </body>
