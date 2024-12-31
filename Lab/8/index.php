@@ -49,3 +49,19 @@ file_put_contents($file, $count);
     </div>
 </body>
 </html>
+
+
+
+
+
+
+File permissions:
+sudo chown www-data:www-data /var/www/html/new.txt  
+sudo chmod 666 /var/www/html/new.txt  
+
+
+sudo chown -R www-data:www-data /var/www/html  
+sudo chmod -R 755 /var/www/html  
+
+
+sudo systemctl restart apache2
