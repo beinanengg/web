@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AJAX with and without jQuery</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f4f4f4;
+      }
+      .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      button {
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid #bdc3c7;
+        border-radius: 5px;
+        background-color: #3498db;
+        color: #fff;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #2980b9;
+      }
+      pre {
+        background-color: #ecf0f1;
+        padding: 10px;
+        border-radius: 5px;
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>AJAX Examples</h1>
+      <!-- Buttons for AJAX requests -->
+      <button id="loadTextWithoutJQuery">Load Text (No jQuery)</button>
+      <button id="loadTextWithJQuery">Load Text (With jQuery)</button>
+      <button id="loadJson">Load JSON</button>
+      <button id="parseJson">Parse JSON</button>
+      <!-- Output areas -->
+      <h2>Text File Content</h2>
+      <pre id="textOutput"></pre>
+      <h2>JSON Data</h2>
+      <pre id="jsonOutput"></pre>
+    </div>
+    <!-- jQuery Library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- JavaScript -->
+    <script>
+      // Function to load text content using vanilla JavaScript
+      document
+        .getElementById("loadTextWithoutJQuery")
+        .addEventListener("click", function () {
+          var xhr = new XMLHttpRequest();
+          xhr.open("GET", "sample.txt", true);
+          xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+              document.getElementById("textOutput").textContent =
+                xhr.responseText;
+            }
+          };
+          xhr.send();
+        });
+      // Function to load text content using jQuery
+      $("#loadTextWithJQuery").click(function () {
+        $.ajax({
+          url: "sample.txt",
+          method: "GET",
+          success: function (data) {
+            $("#textOutput").text(data);
+          },
+          error: function () {
+            $("#textOutput").text("Error loading text file.");
+          },
+        });
+      });
+      // Function to load JSON data using jQuery's getJSON method
+      $("#loadJson").click(function () {
+        $.getJSON("data.json", function (data) {
+          $("#jsonOutput").text(JSON.stringify(data, null, 2));
+        }).fail(function () {
+          $("#jsonOutput").text("Error loading JSON file.");
+        });
+      });
+      // Function to parse JSON data using jQuery's parseJSON method
+      $("#parseJson").click(function () {
+        var jsonString = '{"name": "John", "age": 30, "city": "New York"}';
+        var jsonObject = $.parseJSON(jsonString);
+        $("#jsonOutput").text(
+          "Name: " +
+            jsonObject.name +
+            "\nAge: " +
+            jsonObject.age +
+            "\nCity: " +
+            jsonObject.city
+        );
+      });
+    </script>
+  </body>
+</html>
